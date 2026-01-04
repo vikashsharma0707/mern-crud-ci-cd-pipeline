@@ -102,7 +102,7 @@ const Update = () => {
     setLoading(true);
     setError("");
     try {
-      const api = "http://localhost:5000/employees/empDisplay";
+      const api = "https://mern-crud-ci-cd-pipeline-3.onrender.com/employees/empDisplay";
       const res = await axios.get(api);
       setEmployees(res.data.employees || []);
     } catch (err) {
