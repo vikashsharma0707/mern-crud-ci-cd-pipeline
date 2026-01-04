@@ -2,24 +2,24 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_USER = "vikashsharma0707"
-        BACKEND_IMAGE = "practicecrud-backend"
-        FRONTEND_IMAGE = "practicecrud-frontend"
+        DOCKERHUB_CREDENTIALS = 'dockerhub-creds'
+        DOCKERHUB_USER = 'vikashsharma0707'
+        BACKEND_IMAGE = 'vikashsharma0707/practicecrud-backend'
+        FRONTEND_IMAGE = 'vikashsharma0707/practicecrud-frontend'
     }
 
     stages {
 
         stage('Clone Code') {
             steps {
-                git branch: 'main',
+                git branch: 'master',
                     url: 'https://github.com/vikashsharma0707/mern-crud-ci-cd-pipeline.git'
             }
         }
 
         stage('Build Docker Images') {
             steps {
-                sh 'docker build -t $DOCKER_USER/$BACKEND_IMAGE ./backend'
-                sh 'docker build -t $DOCKER_USER/$FRONTEND_IMAGE ./frontend'
+                sh 'docker compose build'
             }
         }
 
@@ -27,28 +27,27 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: 'dockerhub-creds',
-                    usernameVariable: 'DOCKER_USERNAME',
-                    passwordVariable: 'DOCKER_PASSWORD'
+                    usernameVariable: 'DOCKER_USER',
+                    passwordVariable: 'DOCKER_PASS'
                 )]) {
-                    sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
+                    sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
                 }
             }
         }
 
         stage('Push Images') {
             steps {
-                sh 'docker push $DOCKER_USER/$BACKEND_IMAGE'
-                sh 'docker push $DOCKER_USER/$FRONTEND_IMAGE'
+                sh 'docker compose push'
             }
         }
     }
 
     post {
         success {
-            echo "✅ CI Pipeline Completed Successfully!"
+            echo '✅ CI Pipeline Successful'
         }
         failure {
-            echo "❌ CI Pipeline Failed"
+            echo '❌ CI Pipeline Failed'
         }
     }
 }
