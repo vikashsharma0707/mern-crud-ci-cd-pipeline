@@ -124,7 +124,7 @@ const Edit = () => {
     setSaving(true);
 
     try {
-      const api = "http://localhost:5000/employees/empUpdate";
+      const api = "https://mern-crud-ci-cd-pipeline-3.onrender.com/employees/empUpdate";
       await axios.post(api, input);
       alert("Employee updated successfully!");
       navigate("/update"); // or wherever your list is

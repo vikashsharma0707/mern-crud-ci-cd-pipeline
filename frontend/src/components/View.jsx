@@ -55,7 +55,7 @@ const View = () => {
     setError("");
 
     try {
-      const api = "http://localhost:5000/employees/empView";
+      const api = "https://mern-crud-ci-cd-pipeline-3.onrender.com/employees/empView";
       const res = await axios.post(api, { id: empview });
 
       if (res.data?.employee) {

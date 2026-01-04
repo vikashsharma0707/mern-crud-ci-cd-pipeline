@@ -60,7 +60,7 @@ const Display = () => {
   const [val, setval] = useState([]);
 
   const loaddata = () => {
-    let api = "http://localhost:5000/employees/empDisplay";
+    let api = "https://mern-crud-ci-cd-pipeline-3.onrender.com/employees/empDisplay";
     axios.get(api).then((res) => {
       setval(res.data.employees);
     });

@@ -70,7 +70,7 @@ const Search = () => {
     setEmployee(null);
 
     try {
-      const api = "http://localhost:5000/employees/empSearch";
+      const api = "https://mern-crud-ci-cd-pipeline-3.onrender.com/employees/empSearch";
       const res = await axios.post(api, { empNo: empno.trim() });
 
       if (res.data && res.data.employee) {

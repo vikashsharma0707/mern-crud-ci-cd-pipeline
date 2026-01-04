@@ -121,7 +121,7 @@ const Update = () => {
     if (!window.confirm("Are you sure you want to delete this employee?")) return;
 
     try {
-      const api = "http://localhost:5000/employees/empDelete";
+      const api = "https://mern-crud-ci-cd-pipeline-3.onrender.com/employees/empDelete";
       await axios.post(api, { id });
       alert("Employee deleted successfully");
       loadData(); // refresh list

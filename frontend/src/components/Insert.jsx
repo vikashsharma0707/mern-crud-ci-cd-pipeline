@@ -74,7 +74,7 @@ const Insert = () => {
     setMessage("");
 
     try {
-      const api = "http://localhost:5000/employees/empInsert";
+      const api = "https://mern-crud-ci-cd-pipeline-3.onrender.com/employees/empInsert";
       await axios.post(api, input);
       setMessage("Employee added successfully! 🎉");
       setInput({
