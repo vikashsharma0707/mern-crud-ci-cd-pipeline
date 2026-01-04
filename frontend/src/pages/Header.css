@@ -1,0 +1,62 @@
+/* Header.css */
+.navbar {
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.brand-highlight {
+  color: #3b82f6; /* matches blue theme from previous components */
+  font-weight: 800;
+}
+
+.nav-link {
+  font-weight: 500;
+  padding: 0.6rem 1.2rem !important;
+  transition: all 0.2s ease;
+  color: #e5e7eb !important;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+.nav-link.active {
+  color: #ffffff !important;
+  background: rgba(59, 130, 246, 0.3) !important;
+  border-radius: 6px;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 3px;
+  background: #3b82f6;
+  border-radius: 3px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: #212529;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .nav-link {
+    padding: 0.8rem 1.5rem !important;
+  }
+}

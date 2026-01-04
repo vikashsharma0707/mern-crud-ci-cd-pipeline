@@ -1,0 +1,43 @@
+/* Layout.css - global page structure & spacing */
+
+.app-layout {
+  background: #f8f9fa;           /* light gray background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area */
+.main-content {
+  background: #ffffff;
+  padding: 1.5rem 0;
+}
+
+/* Constrain content width & center it */
+.content-container {
+  max-width: 1400px;             /* or 1200px, 1320px, etc. */
+  margin: 0 auto;
+  padding: 0 1rem;               /* side padding on mobile */
+  width: 100%;
+}
+
+/* Optional: Add some breathing room on larger screens */
+@media (min-width: 992px) {
+  .content-container {
+    padding: 0 2rem;
+  }
+}
+
+/* Optional: Give pages some top/bottom spacing */
+main .content-container > * {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Make sure tables and cards don't overflow horizontally */
+.content-container table,
+.content-container .card,
+.content-container .table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}

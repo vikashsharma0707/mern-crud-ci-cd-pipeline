@@ -1,0 +1,46 @@
+.home-page {
+  background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+  min-height: calc(100vh - 140px); /* approx header + footer */
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+  color: white;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.brand-highlight {
+  color: #ffffff;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.action-card {
+  transition: all 0.25s ease;
+  border-radius: 12px;
+}
+
+.action-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+.icon-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.action-card:hover .icon-circle {
+  transform: scale(1.1);
+}
+
+.stats-section {
+  padding-top: 4rem;
+}
