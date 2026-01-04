@@ -1,6 +1,26 @@
+# services:
+#   backend:
+#     build: ./backend
+#     container_name: practicecrud-backend
+#     ports:
+#       - "5000:5000"
+#     env_file:
+#       - ./backend/.env
+
+#   frontend:
+#     build: ./frontend
+#     container_name: practicecrud-frontend
+#     ports:
+#       - "5173:5173"
+#     command: npm run dev -- --host
+#     depends_on:
+#       - backend
+
+
 services:
   backend:
     build: ./backend
+    image: vikashsharma0707/mern-crud-backend:latest          # ← YE LINE ADD KARO
     container_name: practicecrud-backend
     ports:
       - "5000:5000"
@@ -9,6 +29,7 @@ services:
 
   frontend:
     build: ./frontend
+    image: vikashsharma0707/mern-crud-frontend:latest         # ← YE LINE ADD KARO
     container_name: practicecrud-frontend
     ports:
       - "5173:5173"
