@@ -14,13 +14,13 @@ const App = () => {
   return (
     <>
 
-      <h1>This is app page</h1>
+      
 
       <BrowserRouter>
 
         <Routes>
           <Route path="/" element={<Layout />}>
-
+<Route index element={<Home />} />
             <Route path="home" element={<Home />} />
             <Route path="display" element={<Display />} />
             <Route path="insert" element={<Insert />} />

@@ -1,46 +1,86 @@
+/* Home.css */
+
 .home-page {
   background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
-  min-height: calc(100vh - 140px); /* approx header + footer */
+  min-height: calc(100vh - 140px); /* adjust according to your header/footer */
 }
 
 .hero-section {
   background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
   color: white;
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  position: relative;
 }
 
 .brand-highlight {
-  color: #ffffff;
-  font-weight: 800;
   background: linear-gradient(90deg, #ffffff, #e0e0e0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
 }
 
 .action-card {
-  transition: all 0.25s ease;
-  border-radius: 12px;
+  transition: all 0.3s ease;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .action-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
 }
 
 .icon-circle {
-  width: 90px;
-  height: 90px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  font-size: 2.5rem;
+  transition: all 0.4s ease;
 }
 
 .action-card:hover .icon-circle {
-  transform: scale(1.1);
+  transform: scale(1.15) rotate(5deg);
 }
 
 .stats-section {
-  padding-top: 4rem;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+
+/* Larger text for better readability */
+.display-3 {
+  font-size: 4.5rem !important;
+}
+
+.display-6 {
+  font-size: 3rem !important;
+}
+
+.fs-4 {
+  font-size: 1.5rem !important;
+}
+
+.fs-5 {
+  font-size: 1.25rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  
+  .display-3 {
+    font-size: 3.5rem !important;
+  }
+  
+  .icon-circle {
+    width: 90px;
+    height: 90px;
+  }
 }
